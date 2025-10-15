@@ -9,7 +9,7 @@
 [![LangChain](https://img.shields.io/badge/LangChain-Agentic%20AI-orange)]()
 [![Whisper](https://img.shields.io/badge/Whisper-Speech--to--Text-brightgreen)]()
 [![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-yellow)]()
-[![License](https://img.shields.io/badge/Status-Hackathon%20Prototype-success)]()
+
 
 ---
 
@@ -58,7 +58,6 @@ Powered entirely by **local inference (Whisper + Ollama)** for privacy and relia
 | **Database** | SQLite (Local & Private) |
 | **Frontend** | HTML, CSS, JavaScript |
 | **Geolocation** | GeoPy |
-| **Planned Scheduling** | Python `schedule` + TinyDB |
 
 ---
 
