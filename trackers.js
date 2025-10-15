@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("hidden");
     modalBody.innerHTML = "<p>Loading...</p>";
 
-    /* 💧 WATER TRACKER */
+    /*  WATER TRACKER */
     if (type === "water") {
       modalBody.innerHTML = `
         <h3><i class="fa-solid fa-droplet" style="color:#007aff"></i> Water Tracker</h3>
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadWater();
     }
 
-    /* 💉 VACCINE TRACKER */
+    /*  VACCINE TRACKER */
     else if (type === "vaccine") {
       modalBody.innerHTML = `
         <h3><i class="fa-solid fa-syringe" style="color:#007aff"></i> Vaccination Tracker</h3>
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadVaccine();
     }
 
-    /* 🌸 MENSTRUAL TRACKER */
+    /*  MENSTRUAL TRACKER */
     else if (type === "menstrual") {
       modalBody.innerHTML = `
         <h3><i class="fa-solid fa-calendar-days" style="color:#007aff"></i> Menstrual Tracker</h3>
