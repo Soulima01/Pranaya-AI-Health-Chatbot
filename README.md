@@ -84,7 +84,7 @@ See [`CONFIDENTIAL_FILES.md`](./CONFIDENTIAL_FILES.md) for details.
 
 ---
 
-## 🧩 Repository Structure  
+## Repository Structure  
 PRANAYA-Health-Chatbot/
 ┣ 📜 .gitignore
 ┣ 📜 README.md
@@ -103,7 +103,7 @@ PRANAYA-Health-Chatbot/
 PRANAYA bridges the digital divide in healthcare by making **AI-powered, empathetic, multilingual assistance** universally accessible.  
 It’s designed not just to respond, but to **understand, reassure, and empower** users to take charge of their health with confidence.  
 
-> *“PRANAYA isn’t just built to assist — it’s built to care.”* 💫  
+> *“PRANAYA isn’t just built to assist — it’s built to care.”*   
 
 ---
 
