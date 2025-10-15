@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranaya — AI Health Assistant</title>
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/trackers.css" />
+</head>
+
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="header">
+      <img src="/static/pranaya_logo.jpg" alt="Pranaya Logo" class="logo" />
+      <h1>Pranaya</h1>
+      <p class="subtitle">Your Health & Wellness Companion</p>
+
+      <!-- Elegant Trackers Dropdown -->
+      <div class="tracker-dropdown">
+        <button id="trackerButton" class="tracker-icon-btn" title="Health Trackers">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </button>
+
+        <div id="dropdownMenu" class="dropdown hidden">
+          <button class="dropdown-item" data-tracker="water" title="Water Tracker">
+            <i class="fa-solid fa-droplet"></i> Water
+          </button>
+          <button class="dropdown-item" data-tracker="vaccine" title="Vaccination Tracker">
+            <i class="fa-solid fa-syringe"></i> Vaccination
+          </button>
+          <button class="dropdown-item" data-tracker="menstrual" title="Menstrual Tracker">
+            <i class="fa-solid fa-calendar-days"></i> Menstrual
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chat-box" class="chat-box">
+      <div class="bot-message">
+        <div class="bubble bot">
+          Hello! I’m <b>Pranaya</b> — your AI health companion.<br />
+          How are you feeling today?
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <button id="mic-btn" class="mic-btn" title="Speak"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="send-btn" class="send-btn" title="Send"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Tracker Modal -->
+  <div id="trackerModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- 🚨 Emergency Alert Modal -->
+  <div id="emergencyModal" class="emergency-modal hidden">
+    <audio id="sirenAudio" src="/static/siren.mp3" loop></audio>
+    <div class="emergency-content">
+      <h2>🚨 Emergency Detected!</h2>
+      <p id="emergencyReason">Please stay calm. Help is on the way.</p>
+      <div class="emergency-buttons">
+        <button id="call108">📞 Call 108</button>
+        <button id="nearbyHospitals">📍 Nearby Hospitals</button>
+        <button id="falseAlarm">❌ False Alarm</button>
+      </div>
+      <div id="hospitalList" class="hospital-list"></div>
+    </div>
+  </div>
+
+  <!-- JS Files -->
+  <script src="/static/script.js"></script>
+  <script src="/static/trackers.js"></script>
+</body>
+</html>

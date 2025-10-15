@@ -1,0 +1,55 @@
+# Main backend logic (Confidential)
+app.py
+agents.py
+crew_config.py
+tools.py
+tasks.py
+
+# Environment variables (API keys)
+.env
+# AI vector databases and Chroma storage
+vector_db/
+chroma.sqlite3
+*.sqlite3
+
+# WHO RAG and health data sources
+who_health_guidelines.pdf
+*.db
+
+# Temporary audio files and speech outputs
+temp_audio.wav
+test_voice.mp3
+*.mp3
+*.wav
+
+# Any user or runtime files
+tempCodeRunnerFile.py
+trackers.db
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local data and memory folders
+localdb/
+memory/
+trackers/
+
+# Python virtual environment (huge & local only)
+venv/
+ENV/
+env/
+.venv/
+
+# System / IDE files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+pyvenv.cfg
+
+# Pip or dependency cache
+__pycache__/
+*.egg-info/
+*.egg
+*.log

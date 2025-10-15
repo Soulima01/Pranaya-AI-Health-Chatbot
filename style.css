@@ -1,0 +1,340 @@
+/* 🩺 BODY & BACKGROUND */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #e3f2fd, #e8f5e9);
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2966/2966484.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 420px;
+}
+
+/* 💬 MAIN CHAT CONTAINER */
+.chat-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  width: 95%;
+  max-width: 500px;
+  height: 85vh;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(0, 150, 136, 0.2);
+  position: relative;
+}
+
+/* 🩵 HEADER */
+.header {
+  background: linear-gradient(90deg, #0077b6, #00acc1);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid #80deea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 6px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #e0f7fa;
+}
+
+/* 💬 CHAT AREA */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+/* 🗨️ MESSAGE BUBBLES */
+.bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 8px;
+  position: relative;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🧍‍♀️ USER MESSAGE — aligned right */
+.user-message {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bubble.user {
+  background: #d1f7c4;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.25);
+}
+
+/* 🤖 BOT MESSAGE — aligned left */
+.bot-message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bubble.bot {
+  background: #f0f0f0;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 150, 136, 0.1);
+}
+
+/* Chat bubble tails */
+.bubble.user::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid #d1f7c4;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.bubble.bot::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 10px solid #f0f0f0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* ✍️ INPUT AREA */
+.input-area {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  border-radius: 20px;
+  background: #f3f3f3;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+#user-input:focus {
+  background: #fff;
+  border: 1px solid #80deea;
+}
+
+/* 🎙️ MIC + SEND BUTTONS */
+.mic-btn, .send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00acc1, #0077b6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.3);
+}
+
+.mic-btn:hover, .send-btn:hover {
+  transform: scale(1.1);
+}
+
+/* RECORDING STATE */
+.mic-btn.recording {
+  background: #d50000 !important;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ✨ TYPING EFFECT */
+.typing {
+  font-style: italic;
+  color: #888;
+  font-size: 14px;
+  margin: 5px 0;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.feedback-container {
+  margin-top: 10px;
+  background: rgba(245, 245, 245, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.feedback-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #0077b6;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.fa-star {
+  color: #ccc;
+  font-size: 18px;
+  margin: 0 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fa-star.active {
+  color: #f4b400;
+}
+
+.feedback-text {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px;
+  font-family: inherit;
+  resize: none;
+  font-size: 13px;
+}
+
+.submit-feedback {
+  background: #00acc1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.submit-feedback:hover {
+  background: #0077b6;
+}
+
+.thank-you {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+
+/* 💡 NUDGE BUTTONS */
+.nudge-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: flex-start;
+}
+
+.nudge-btn {
+  background: #f1f8e9;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.nudge-btn:hover {
+  background: #c8e6c9;
+}
+
+/* 🚨 EMERGENCY MODAL */
+.emergency-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  text-align: center;
+  animation: alertFlash 1s infinite alternate;
+}
+
+.emergency-modal.hidden { display: none; }
+
+.emergency-content {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  border-radius: 15px;
+  width: 85%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes alertFlash {
+  from { background: rgba(255, 0, 0, 0.85); }
+  to { background: rgba(255, 30, 30, 0.9); }
+}
