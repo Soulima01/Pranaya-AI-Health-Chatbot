@@ -1,4 +1,4 @@
-/* 🩺 BODY & BACKGROUND */
+/*  BODY & BACKGROUND */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -13,7 +13,7 @@ body {
   background-size: 420px;
 }
 
-/* 💬 MAIN CHAT CONTAINER */
+/* MAIN CHAT CONTAINER */
 .chat-container {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -29,7 +29,7 @@ body {
   position: relative;
 }
 
-/* 🩵 HEADER */
+/*  HEADER */
 .header {
   background: linear-gradient(90deg, #0077b6, #00acc1);
   color: white;
@@ -75,7 +75,7 @@ h1 {
   scroll-behavior: smooth;
 }
 
-/* 🗨️ MESSAGE BUBBLES */
+/*  MESSAGE BUBBLES */
 .bubble {
   max-width: 75%;
   padding: 12px 16px;
@@ -106,7 +106,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(76, 175, 80, 0.25);
 }
 
-/* 🤖 BOT MESSAGE — aligned left */
+/*  BOT MESSAGE — aligned left */
 .bot-message {
   display: flex;
   justify-content: flex-start;
@@ -144,7 +144,7 @@ h1 {
   border-bottom: 10px solid transparent;
 }
 
-/* ✍️ INPUT AREA */
+/*  INPUT AREA */
 .input-area {
   display: flex;
   align-items: center;
@@ -170,7 +170,7 @@ h1 {
   border: 1px solid #80deea;
 }
 
-/* 🎙️ MIC + SEND BUTTONS */
+/*  MIC + SEND BUTTONS */
 .mic-btn, .send-btn {
   display: flex;
   align-items: center;
@@ -203,7 +203,7 @@ h1 {
   50% { transform: scale(1.08); }
 }
 
-/* ✨ TYPING EFFECT */
+/*  TYPING EFFECT */
 .typing {
   font-style: italic;
   color: #888;
@@ -283,7 +283,7 @@ h1 {
 }
 
 
-/* 💡 NUDGE BUTTONS */
+/*  NUDGE BUTTONS */
 .nudge-box {
   display: flex;
   flex-wrap: wrap;
@@ -307,7 +307,7 @@ h1 {
   background: #c8e6c9;
 }
 
-/* 🚨 EMERGENCY MODAL */
+/*  EMERGENCY MODAL */
 .emergency-modal {
   position: fixed;
   top: 0; left: 0;
