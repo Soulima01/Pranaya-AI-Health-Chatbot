@@ -25,7 +25,7 @@ function appendMessage(sender, message) {
   bubble.innerHTML = message.replace(/\n/g, "<br>");
   msgDiv.appendChild(bubble);
 
-  // 💬 Add feedback section under bot replies only
+  //  Add feedback section under bot replies only
   if (sender === "bot") {
     const feedbackDiv = document.createElement("div");
     feedbackDiv.classList.add("feedback-container");
@@ -43,7 +43,7 @@ function appendMessage(sender, message) {
     `;
     msgDiv.appendChild(feedbackDiv);
 
-    // ⭐ Star click handler
+    //  Star click handler
     feedbackDiv.querySelectorAll(".fa-star").forEach(star => {
       star.addEventListener("click", () => {
         const rating = star.dataset.rating;
@@ -55,7 +55,7 @@ function appendMessage(sender, message) {
       });
     });
 
-    // 💾 Feedback submission
+    // Feedback submission
     feedbackDiv.querySelector(".submit-feedback").addEventListener("click", async () => {
       const rating = feedbackDiv.dataset.rating || null;
       const feedbackText = feedbackDiv.querySelector(".feedback-text").value.trim();
@@ -194,7 +194,7 @@ function typeAndSpeakMessage(fullText, audioUrl) {
       `;
       msgDiv.appendChild(feedbackDiv);
 
-      // ⭐ Star click handler
+      //  Star click handler
       feedbackDiv.querySelectorAll(".fa-star").forEach(star => {
         star.addEventListener("click", () => {
           const rating = star.dataset.rating;
@@ -206,7 +206,7 @@ function typeAndSpeakMessage(fullText, audioUrl) {
         });
       });
 
-      // 💾 Feedback submission
+      //  Feedback submission
       feedbackDiv.querySelector(".submit-feedback").addEventListener("click", async () => {
         const rating = feedbackDiv.dataset.rating || null;
         const feedbackText = feedbackDiv.querySelector(".feedback-text").value.trim();
@@ -244,10 +244,10 @@ async function sendMessage() {
     const data = await res.json();
     removeTyping();
 
-    // 🧠 Typing + Speaking
+    //  Typing + Speaking
     typeAndSpeakMessage(data.reply, data.audio);
 
-    // 🚨 Emergency detected
+    //  Emergency detected
     if (data.emergency && data.emergency.is_emergency) {
       triggerEmergency(data.emergency.reason);
     }
@@ -293,12 +293,12 @@ micBtn.addEventListener("click", async () => {
         appendMessage("user", data.transcript || "🎙️ [Voice input]");
         typeAndSpeakMessage(data.response || "⚠️ Could not process audio.", data.audio);
 
-        // 🚨 Emergency trigger for voice
+        //  Emergency trigger for voice
         if (data.emergency && data.emergency.is_emergency) {
           triggerEmergency(data.emergency.reason);
         }
 
-        // 💡 Nudges
+        //  Nudges
         if (data.nudges && data.nudges.length > 0) {
           showNudges(data.nudges);
         }
