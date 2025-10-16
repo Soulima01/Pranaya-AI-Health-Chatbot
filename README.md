@@ -70,7 +70,7 @@ Powered entirely by **local inference (Whisper + Ollama)** for privacy and relia
 -  **BP & blood-sugar tracking** with trend visualization  
 -  **Connect Feature:** allow loved ones to securely view shared reports
 -  **Collaboration with hospitals:** for vaccine availability
--  **ntegration with doctors and hospitals:** for appointments and emergency check-ups
+-  **Integration with doctors and hospitals:** for appointments and emergency check-ups
 
 ---
 
